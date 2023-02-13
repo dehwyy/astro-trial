@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Components from "../components/index"
+const {Card} = Components.get
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<Card />
+		<Card name={"123131"}/>
 	</main>
 </Layout>
