@@ -1,8 +1,11 @@
 ---
+import Widgets from "../Widgets";
+import Navbar from "../components/Navbar.tsx"
+const {AppWrapper, ContentWrapper} = Widgets.wrappers
 export interface Props {
 	title?: string;
 }
-
+const url = Astro.url
 const { title = "dehwyy" } = Astro.props;
 ---
 
@@ -16,11 +19,34 @@ const { title = "dehwyy" } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+	<AppWrapper>
+		<Navbar currentPage={url.pathname}/>
+		<ContentWrapper>
+			<slot />
+		</ContentWrapper>
+	</AppWrapper>
 	</body>
+
 </html>
 <style>
-	body {
-		background: #444444;
-	}
+@font-face {
+	font-family: 'desib';
+	src: url("../../public/fonts/desib.ttf") format('truetype');
+}
+@font-face {
+	font-family: 'kenyan';
+	src: url("../../public/fonts/kenyan.otf") format('truetype');
+}
+@font-face {
+	font-family: 'neuro';
+	src: url("/fonts/neuro.otf") format('truetype');
+}
+@font-face {
+	font-family: 'zekton';
+	src: url("/fonts/zekton.otf") format('truetype');
+}
+body {
+	background: #444444;
+}
+
 </style>
