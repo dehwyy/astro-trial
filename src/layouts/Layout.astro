@@ -28,14 +28,14 @@ const { title = "dehwyy" } = Astro.props;
 	</body>
 
 </html>
-<style>
+<style is:global>
 @font-face {
 	font-family: 'desib';
-	src: url("../../public/fonts/desib.ttf") format('truetype');
+	src: url("/fonts/desib.ttf") format('truetype');
 }
 @font-face {
 	font-family: 'kenyan';
-	src: url("../../public/fonts/kenyan.otf") format('truetype');
+	src: url("/fonts/kenyan.otf") format('truetype');
 }
 @font-face {
 	font-family: 'neuro';
@@ -48,5 +48,10 @@ const { title = "dehwyy" } = Astro.props;
 body {
 	background: #444444;
 }
-
+.cut-right-bottom-small {
+	clip-path: polygon(100% 0, 100% 85%, 95% 100%, 0 100%, 0 0);
+}
+.cut-right-bottom-big {
+	clip-path: polygon(100% 0, 100% 90%, 95% 100%, 0 100%, 0 0);
+}
 </style>

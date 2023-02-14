@@ -1,8 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Components from "../components";
+import Widgets from "../Widgets";
+import Fade from "../Widgets/Tranistions/Fade.svelte";
+const {UserCard} = Components.user
 ---
 <Layout title="Profile">
     <main>
-        User
+        <Fade client:idle="true">
+            <UserCard />
+        </Fade>
     </main>
 </Layout>
