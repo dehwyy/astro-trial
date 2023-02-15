@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Widgets from "../../Widgets"; const {UserField} = Widgets.Items
+import Widgets from "../../Widgets"; const {UserField} = Widgets.items
 import {useStore} from "@nanostores/vue";
 import {user} from "../../store/user.store";
 

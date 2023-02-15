@@ -1,6 +1,7 @@
 ---
 import Widgets from "../Widgets";
-import Navbar from "../components/Navbar.tsx"
+import Components from "../components";
+const {Navbar} = Components.get
 const {AppWrapper, ContentWrapper} = Widgets.wrappers
 export interface Props {
 	title?: string;
@@ -46,7 +47,7 @@ const { title = "dehwyy" } = Astro.props;
 	src: url("/fonts/zekton.otf") format('truetype');
 }
 body {
-	background: #444444;
+	background: #333333;
 }
 .cut-right-bottom-small {
 	clip-path: polygon(100% 0, 100% 85%, 95% 100%, 0 100%, 0 0);

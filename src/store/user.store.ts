@@ -1,14 +1,6 @@
 import {atom} from "nanostores";
 
 
-interface IUser {
-    name?: string
-    nickname?: string
-    joinData: string
-    image?: string
-    posts?: Array<unknown>
-}
-
 export const user = atom<IUser> ({
     name: "Andrey Avarov",
     nickname: "Andoff",

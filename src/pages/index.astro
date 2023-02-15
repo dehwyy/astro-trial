@@ -1,11 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Components from "../components/index"
-const {Card} = Components.get
+import Fade from "../Widgets/Tranistions/Fade.svelte";
+const {Posts} = Components.posts
+
 ---
 
 <Layout title="Asteroid">
 	<main>
-		<Card name={"Makar"}/>
+		<Fade client:idle="true">
+			<Posts />
+		</Fade>
 	</main>
 </Layout>
