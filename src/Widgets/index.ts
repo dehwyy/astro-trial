@@ -3,6 +3,7 @@ import AppWrapper from "./Wrappers/AppWrapper.vue"
 import ContentWrapper from "./Wrappers/ContentWrapper.svelte"
 import UserField from "./Items/UserField.vue"
 import Post from "./Items/Post.react.tsx"
+import UserPost from "./Items/UserPost.svelte"
 class Widgets {
     get wrappers() {
         return {
@@ -11,7 +12,7 @@ class Widgets {
     }
     get items() {
         return {
-            UserField, Post
+            UserField, Post, UserPost
         }
 
     }

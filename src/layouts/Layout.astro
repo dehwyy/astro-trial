@@ -46,8 +46,15 @@ const { title = "dehwyy" } = Astro.props;
 	font-family: 'zekton';
 	src: url("/fonts/zekton.otf") format('truetype');
 }
+@font-face {
+	font-family: 'generis';
+	src: url("/fonts/generis.otf") format('truetype');
+}
 body {
 	background: #333333;
+}
+.cut-left-top-small {
+	clip-path: polygon(25% 0%, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 35%);
 }
 .cut-right-bottom-small {
 	clip-path: polygon(100% 0, 100% 85%, 95% 100%, 0 100%, 0 0);

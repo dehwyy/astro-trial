@@ -7,7 +7,7 @@ const {Post} = Widgets.items
 const Posts:FC = () => {
     const $posts = useStore(posts)
     return (
-        <div className="pt-10 px-5 h-full min-h-screen mx-auto w-[700px]">
+        <div className="pt-10 px-5 h-full min-h-screen mx-auto w-[700px] flex flex-col gap-y-5">
             {$posts.map(post => (
                 <Post post={post} key={post.id}/>
             ))}

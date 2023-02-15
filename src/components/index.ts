@@ -1,5 +1,6 @@
 //@ts-nocheck =>  cuz astro warns
 import UserCard from "./user/UserCard.vue"
+import UserPosts from "./user/UserPosts.svelte"
 import Navbar from "./Navbar.tsx"
 import Posts from "./posts/Posts.react.tsx"
 class Components {
@@ -10,7 +11,7 @@ class Components {
     }
     get user() {
         return {
-            UserCard
+            UserCard, UserPosts
         }
     }
     get posts() {

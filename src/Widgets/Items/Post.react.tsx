@@ -24,8 +24,8 @@ const Post:FC<IProps> = ({post}) => {
                     <div key={index}>-- {tag}</div>
                 ) )}
             </div>
-            <div className="h-[350px]">
-                <img className="h-full w-full object-cover" src={post.previewImage} alt="image" />
+            <div className="">
+                <img className="max-h-[550px] h-full w-full object-cover" src={post.previewImage} alt="image" />
             </div>
             <div className="">
                 {post.previewText}

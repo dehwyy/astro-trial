@@ -20,6 +20,7 @@ module.exports = {
 				"custom-kenyan": ["kenyan", ...defaultTheme.fontFamily.sans],
 				"custom-neuro": ["neuro", ...defaultTheme.fontFamily.sans],
 				"custom-zekton": ["zekton", ...defaultTheme.fontFamily.sans],
+				"custom-generis": ["generis", ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},
