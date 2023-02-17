@@ -1,3 +1,4 @@
+//@ts-nocheck
 import {navItems} from "../store/navbar.store"
 import {useStore} from "@nanostores/solid";
 import {Component, For} from "solid-js";

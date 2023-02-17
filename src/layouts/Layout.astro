@@ -1,8 +1,7 @@
 ---
-import Widgets from "../Widgets";
-import Components from "../components";
-const {Navbar} = Components.get
-const {AppWrapper, ContentWrapper} = Widgets.wrappers
+import Navbar from "../components/Navbar";
+import AppWrapper from "../Widgets/Wrappers/AppWrapper.vue"
+import ContentWrapper from "../Widgets/Wrappers/ContentWrapper.svelte";
 export interface Props {
 	title?: string;
 }

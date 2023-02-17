@@ -1,8 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import FullPost from "../../components/post/FullPost.vue"
+const {id} = Astro.params
 ---
 <Layout title="Asteroid-blogs">
     <main>
-        Blogs
+        <FullPost client:load="true" postId={Number(id)}/>
     </main>
 </Layout>

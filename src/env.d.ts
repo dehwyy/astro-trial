@@ -13,6 +13,7 @@ interface IPost {
     theme: string
     content: string
     author: string
+    authorId: number,
     authorImage: string
     previewImage?: string
     previewText: string

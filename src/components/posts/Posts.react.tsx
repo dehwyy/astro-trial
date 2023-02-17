@@ -2,8 +2,7 @@
 import React, {FC} from 'react';
 import {useStore} from "@nanostores/react";
 import {posts} from "../../store/posts.store";
-import Widgets from "../../Widgets";
-const {Post} = Widgets.items
+import Post from "../../Widgets/Items/Post.react";
 const Posts:FC = () => {
     const $posts = useStore(posts)
     return (

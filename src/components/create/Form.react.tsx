@@ -1,10 +1,11 @@
 //@ts-nocheck | I'm so tired of this, React thinks that Input is not valid JSX element!
-import * as React from "react";
-import { useForm } from "react-hook-form";
-import {Button, Divider, styled, TextField} from "@mui/material"
 import {useRef} from "react";
-import Widgets from "../../Widgets";
-const {ContentInput, TagAdder} = Widgets.items
+import { useForm } from "react-hook-form";
+
+import {Button, Divider, styled, TextField} from "@mui/material"
+
+import ContentInput from "../../Widgets/Items/ContentInput.react.tsx";
+import TagAdder from "../../Widgets/Items/TagAdder.react.tsx";
 
 enum FieldValues {
     title = "title",
@@ -26,7 +27,7 @@ const Input = styled(TextField)`
 `
 
 const Btn = styled(Button)`
-  font-family: "generis";
+  font-family: "generis", Arial, sans-serif;
 `
 // I guess images should be like in MD [placeholder](imgUrl) pretty smooth move
 const Form = () => {
