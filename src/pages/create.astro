@@ -1,10 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Components from "../components";
+import Fade from "../Widgets/Tranistions/Fade.svelte";
 import Form from "../components/create/Form.react";
 ---
 <Layout title="Asteroid-create">
     <main>
-        <Form client:only="true"/>
+        <Fade client:idle="true">
+            <Form client:only="true"/>
+        </Fade>
     </main>
 </Layout>

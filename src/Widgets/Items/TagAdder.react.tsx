@@ -1,11 +1,11 @@
 import type {FC, MutableRefObject} from 'react';
-import {Button} from "@mui/material";
-import {useRef, useState} from "react";
+import {useState} from "react";
 import {useForm} from "react-hook-form";
 
 interface IProps {
     customRef: MutableRefObject<Array<string>>
     Input: (any: any) => JSX.Element // Trust me bro...
+    Btn: (any: any) => JSX.Element // Trust me bro...
 }
 
 interface inputFields {
@@ -17,7 +17,7 @@ interface ITag {
     content: string
 }
 // I Should add remove icon for each "TAG" rendered in map
-const TagAdderReact:FC<IProps> = ({Input, customRef}) => {
+const TagAdderReact:FC<IProps> = ({Input, Btn,  customRef}) => {
     const { register, getValues, reset } = useForm<inputFields>()
     const [tags, setTags] = useState<ITag[]>()
     const clickHandler = () => {
@@ -37,7 +37,7 @@ const TagAdderReact:FC<IProps> = ({Input, customRef}) => {
                     <Input color="secondary" style={{width: "100%"}} label="Custom tags" variant="standard" {...register("tag")}/>
                 </div>
                 <div className="bg-[#343434]">
-                    <Button onClick={clickHandler} size="small" color="secondary" variant="outlined">Add to list</Button>
+                    <Btn onClick={clickHandler} size="small" color="secondary" variant="outlined">Add to list</Btn>
                 </div>
             </div>
             <div className="flex gap-x-4 gap-y-2 flex-wrap">

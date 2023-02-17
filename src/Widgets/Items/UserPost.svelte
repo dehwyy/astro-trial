@@ -15,6 +15,8 @@ export let post: IPost
         </div>
     </div>
     <div class="ml-auto flex items-center justify-center mr-[50px]">
-        <button class="cursor-pointer bg-custom-midnight text-custom-gray py-2 px-6 pt-2.5 text-[17px] cut-left-top-small font-custom-generis">go</button>
+        <a href={`/post/${post.id}`}>
+            <button class="cursor-pointer bg-custom-midnight text-custom-gray py-2 px-6 pt-2.5 text-[17px] cut-left-top-small font-custom-generis">go</button>
+        </a>
     </div>
 </div>

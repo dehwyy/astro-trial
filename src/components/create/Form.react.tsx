@@ -24,6 +24,10 @@ const Input = styled(TextField)`
     font-family: inherit!important;
   }
 `
+
+const Btn = styled(Button)`
+  font-family: "generis";
+`
 // I guess images should be like in MD [placeholder](imgUrl) pretty smooth move
 const Form = () => {
     const { register, handleSubmit, watch, formState: { errors },resetField } = useForm<typeof FieldValues>();
@@ -43,12 +47,12 @@ const Form = () => {
                     <Input color="secondary" label="Title" variant="standard" {...register(FieldValues.title, { required: true })} />
                     <Input color="secondary" label="Description" variant="standard" {...register(FieldValues.description, { required: true })} />
                     <Input color="secondary" label="Theme" variant="standard" {...register(FieldValues.theme, { required: true })} />
-                    <TagAdder customRef={tags} Input={Input} />
-                    <ContentInput contentRef={previewContent} pl="This will be preview text"/>
+                    <TagAdder customRef={tags} Input={Input} Btn={Btn}/>
+                    <ContentInput contentRef={previewContent} pl="<PreviewText> Write something..."/>
                     <Divider />
-                    <ContentInput contentRef={content} pl="This will be main content"/>
+                    <ContentInput contentRef={content} pl="<MainContent> Write something..."/>
                     <div className="bg-[#343434] w-max mx-auto mt-5">
-                        <Button size="large" color="secondary" variant="outlined">Create Post</Button>
+                        <Btn size="large" color="secondary" variant="outlined">Create Post</Btn>
                     </div>
                 </form>
             </div>
