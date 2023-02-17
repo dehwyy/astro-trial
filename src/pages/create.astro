@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Components from "../components";
+import Form from "../components/create/Form.react";
 ---
 <Layout title="Asteroid-create">
     <main>
-        Create
+        <Form client:only="true"/>
     </main>
 </Layout>

@@ -11,6 +11,7 @@ interface IPost {
     tags: string[]
     title: string
     theme: string
+    content: string
     author: string
     authorImage: string
     previewImage?: string

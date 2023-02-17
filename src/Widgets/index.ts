@@ -4,6 +4,8 @@ import ContentWrapper from "./Wrappers/ContentWrapper.svelte"
 import UserField from "./Items/UserField.vue"
 import Post from "./Items/Post.react.tsx"
 import UserPost from "./Items/UserPost.svelte"
+import ContentInput from "./Items/ContentInput.react"
+import TagAdder from "./Items/TagAdder.react"
 class Widgets {
     get wrappers() {
         return {
@@ -12,7 +14,7 @@ class Widgets {
     }
     get items() {
         return {
-            UserField, Post, UserPost
+            UserField, Post, UserPost, ContentInput, TagAdder
         }
 
     }
