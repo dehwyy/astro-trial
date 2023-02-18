@@ -3,8 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 import FullPost from "../../components/post/FullPost.vue"
 const {id} = Astro.params
 ---
-<Layout title="Asteroid-blogs">
+<Layout title="Asteroid-blogs" customFont={"https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&amp;display=swap"}>
     <main>
-        <FullPost client:load="true" postId={Number(id)}/>
+        <FullPost client:load="true" postId={Number(id)} />
     </main>
 </Layout>

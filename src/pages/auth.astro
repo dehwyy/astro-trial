@@ -1,0 +1,7 @@
+---
+import AuthLayout from "../layouts/AuthLayout.astro";
+import AuthWrapper from "../components/auth/AuthWrapper.tsx"
+---
+<AuthLayout>
+    <AuthWrapper client:only="react"/>
+</AuthLayout>

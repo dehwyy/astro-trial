@@ -9,6 +9,5 @@ export const navItems = atom<INavItems[]>([
     {href: "/", text: "POSTS"},
     {href: "/blogs", text: "BLOGS (BETA)"},
     {href: "/subs", text: "SUBSCRIPTIONS(BETA)"},
-    {href: "/user", text: "PROFILE"},
     {href: "/create", text: "CREATE"},
 ])

@@ -2,6 +2,9 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	corePlugins: {
+		preflight: false,
+	},
 	theme: {
 		extend: {
 			colors: {
@@ -16,11 +19,11 @@ module.exports = {
 				"custom-darkred": "rgb(169,16,0, 0.7)",
 			},
 			fontFamily: {
-				"custom-desib": ["desib", ...defaultTheme.fontFamily.sans],
-				"custom-kenyan": ["kenyan", ...defaultTheme.fontFamily.sans],
+				"custom-bartkey": ["bartkey", ...defaultTheme.fontFamily.sans],
 				"custom-neuro": ["neuro", ...defaultTheme.fontFamily.sans],
 				"custom-zekton": ["zekton", ...defaultTheme.fontFamily.sans],
 				"custom-generis": ["generis", ...defaultTheme.fontFamily.sans],
+				"custom-inconsolata": ['Inconsolata', ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},

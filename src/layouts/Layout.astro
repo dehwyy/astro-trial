@@ -4,9 +4,10 @@ import AppWrapper from "../Widgets/Wrappers/AppWrapper.vue"
 import ContentWrapper from "../Widgets/Wrappers/ContentWrapper.svelte";
 export interface Props {
 	title?: string;
+	customFont?: string
 }
 const url = Astro.url
-const { title = "dehwyy" } = Astro.props;
+const { title = "dehwyy", customFont } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,12 +16,13 @@ const { title = "dehwyy" } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/icon.jpg" />
+		{customFont && <link rel="stylesheet" href={customFont}>}
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
 	<AppWrapper>
-		<Navbar currentPage={url.pathname}/>
+		<Navbar currentPage={url.pathname} client:load="true"/>
 		<ContentWrapper>
 			<slot />
 		</ContentWrapper>
@@ -30,12 +32,8 @@ const { title = "dehwyy" } = Astro.props;
 </html>
 <style is:global>
 @font-face {
-	font-family: 'desib';
-	src: url("/fonts/desib.ttf") format('truetype');
-}
-@font-face {
-	font-family: 'kenyan';
-	src: url("/fonts/kenyan.otf") format('truetype');
+	font-family: 'bartkey';
+	src: url("/fonts/BARTKEY.ttf") format('truetype');
 }
 @font-face {
 	font-family: 'neuro';
@@ -51,6 +49,10 @@ const { title = "dehwyy" } = Astro.props;
 }
 body {
 	background: #333333;
+}
+a {
+	text-decoration: none;
+	color: inherit;
 }
 .cut-left-top-small {
 	clip-path: polygon(25% 0%, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 35%);

@@ -10,6 +10,9 @@ interface IProps {
 const Navbar:Component<IProps> = ({currentPage}) => {
     const bgColor = setNavbarColor(currentPage)
     const $navItems = useStore(navItems)
+    const id = localStorage.getItem("userId")
+    const accountHref = id || "/auth"
+    const accountContent = id ? "PROFILE" : "LOGIN"
     return (
         <div class="fixed top-0 left-0 right-0 h-12 bg-[#444444] z-50">
             <div class={bgColor + " h-full"}>
@@ -22,6 +25,10 @@ const Navbar:Component<IProps> = ({currentPage}) => {
                             </a>
                         )}
                     </For>
+                    <a href={accountHref}
+                       class={currentPage === accountHref ? "text-custom-light-sky font-custom-zekton underline" : "text-custom-red" + "cursor-pointer font-custom-zekton transition-all duration-300"}>
+                        {accountContent}
+                    </a>
                 </div>
             </div>
         </div>

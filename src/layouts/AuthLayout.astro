@@ -1,0 +1,27 @@
+---
+import AppWrapper from "../Widgets/Wrappers/AppWrapper.vue"
+import ContentWrapper from "../Widgets/Wrappers/ContentWrapper.svelte";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/icon.jpg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Authorization</title>
+</head>
+<body>
+<AppWrapper>
+    <slot />
+</AppWrapper>
+</body>
+
+</html>
+
+<style>
+body {
+    background: #333333;
+}
+</style>

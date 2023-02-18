@@ -1,5 +1,5 @@
 //@ts-nocheck | I'm so tired of this, React thinks that Input is not valid JSX element!
-import {useRef} from "react";
+import {useCallback, useRef} from "react";
 import { useForm } from "react-hook-form";
 
 import {Button, Divider, styled, TextField} from "@mui/material"
@@ -31,16 +31,14 @@ const Btn = styled(Button)`
 `
 // I guess images should be like in MD [placeholder](imgUrl) pretty smooth move
 const Form = () => {
-    const { register, handleSubmit, watch, formState: { errors },resetField } = useForm<typeof FieldValues>();
+    const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<typeof FieldValues>();
     const content = useRef<HTMLDivElement>(null)
     const previewContent = useRef<HTMLDivElement>(null)
     const tags = useRef<string[]>([])
-    const onSubmit = (data: typeof FieldValues) => {
-        console.log(data, content.current.innerText)
+    const onSubmit = useCallback((data: typeof FieldValues) => {
         content.current.innerText = null
-        resetField(FieldValues.title)
-        resetField(FieldValues.description)
-    }
+        reset()
+    }, [])
     return (
         <div className="w-[90%] py-10 mx-auto h-full">
             <div className="bg-[#444444] p-4">

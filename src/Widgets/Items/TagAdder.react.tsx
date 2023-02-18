@@ -1,5 +1,5 @@
 import type {FC, MutableRefObject} from 'react';
-import {useState} from "react";
+import {useCallback, useState} from "react";
 import {useForm} from "react-hook-form";
 
 interface IProps {
@@ -20,7 +20,7 @@ interface ITag {
 const TagAdderReact:FC<IProps> = ({Input, Btn,  customRef}) => {
     const { register, getValues, reset } = useForm<inputFields>()
     const [tags, setTags] = useState<ITag[]>()
-    const clickHandler = () => {
+    const clickHandler = useCallback(() => {
         setTags(prev => {
             if (prev) {
                 return [{id: prev?.length + 1, content: getValues().tag}, ...prev]
@@ -29,7 +29,7 @@ const TagAdderReact:FC<IProps> = ({Input, Btn,  customRef}) => {
             }
         })
         reset()
-    }
+    }, [])
     return (
         <div className=" w-[70%] mx-auto flex flex-col gap-y-4">
             <div className="flex items-end gapx-4">

@@ -2,7 +2,7 @@
 import {useStore} from "@nanostores/vue";
 import {posts} from "../../store/posts.store";
 import PostPanel from "../../Widgets/Items/PostPanel.vue";
-import React from "react";
+import {marked} from "marked";
 interface IProps {
     postId: number
 }
@@ -11,6 +11,7 @@ const props = defineProps<IProps>()
 
 const allPosts = useStore(posts)
 const post = allPosts.value.find(post => post.id === props.postId)
+const postContent = marked.parse(post?.content as string)
 </script>
 
 <template>
@@ -31,8 +32,29 @@ const post = allPosts.value.find(post => post.id === props.postId)
                 </template>
             </div>
             <div class="bg-[#444444] text-justify text-[14px] font-custom-generis text-white py-2 px-5">
-                {{post.content}}
+                <div v-html="postContent" class="font-custom-inconsolata">
+
+                </div>
             </div>
         </div>
     </div>
 </template>
+<style>
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+ul, pre, p {
+    font-size: 1rem;
+    font-family: "Segoe UI", sans-serif;
+}
+pre {
+    background: #343434;
+    padding: 1rem;
+}
+</style>

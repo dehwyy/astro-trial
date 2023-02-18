@@ -11,7 +11,14 @@ import svelte from "@astrojs/svelte";
 import node from "@astrojs/node";
 
 // https://astro.build/config
+import mdx from "@astrojs/mdx";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), vue(), solidJs(), svelte()],
+  integrations: [react(), tailwind({
+    config: {
+      applyBaseStyles: true
+    }
+  }), vue(), solidJs(), svelte(), mdx()],
   output: "server"
 });

@@ -1,4 +1,4 @@
-import React, {FC, MutableRefObject, Ref, useRef, useState} from 'react';
+import React, {FC, memo, MutableRefObject, Ref, useCallback, useRef, useState} from 'react';
 
 interface IProps {
     contentRef: MutableRefObject<HTMLDivElement>
@@ -7,12 +7,12 @@ interface IProps {
 const ContentInputReact:FC<IProps> = ({contentRef, pl}) => {
     const [moves, setMoves] = useState(0)
     const contentPlaceholder = useRef<HTMLDivElement>(null)
-    const rerenderHandler = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const rerenderHandler = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
         if (contentRef.current.innerText.length === 0 && e.key !== "Backspace" && contentPlaceholder.current) {
             contentPlaceholder.current.innerText = ""
         }
         setMoves(prev => prev + 1)
-    }
+    }, [])
     return (
         <div className="relative text-custom-gray bg-transparent px-8 my-5">
             <div ref={contentPlaceholder} onClick={() => contentRef.current.focus()} className="select-none absolute top-0 text-[15px] text-gray-400">{contentRef.current?.innerText.length ? "" : pl}</div>
@@ -21,4 +21,4 @@ const ContentInputReact:FC<IProps> = ({contentRef, pl}) => {
     );
 };
 
-export default ContentInputReact;
+export default memo(ContentInputReact);
