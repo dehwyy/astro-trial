@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar";
+import {Footer} from "../components/Footer";
 import AppWrapper from "../Widgets/Wrappers/AppWrapper.vue"
 import ContentWrapper from "../Widgets/Wrappers/ContentWrapper.svelte";
 export interface Props {
@@ -20,12 +21,13 @@ const { title = "dehwyy", customFont } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body style="margin: 0; padding: 0">
 	<AppWrapper>
 		<Navbar currentPage={url.pathname} client:load="true"/>
 		<ContentWrapper>
 			<slot />
 		</ContentWrapper>
+		<Footer />
 	</AppWrapper>
 	</body>
 

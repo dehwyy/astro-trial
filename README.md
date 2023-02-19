@@ -6,6 +6,7 @@
 - Svelte
 - Vue
 - Solid
+- Lit
 - Nanostores
 - Tailwind
 - Vitest
