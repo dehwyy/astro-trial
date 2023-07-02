@@ -11,5 +11,3 @@
 - Tailwind
 - Vitest
 - Playwright
-
-## Waiting for backend
